@@ -1,3 +1,4 @@
+import 'package:events_time_microapp_ds/events_time_microapp_ds.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -111,6 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            DSButton(
+              buttonText: 'HELLO WORLD',
+              onPressed: () {},
             ),
           ],
         ),

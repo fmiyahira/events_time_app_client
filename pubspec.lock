@@ -49,6 +49,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  events_time_microapp_ds:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "0e32f3f405e88a9d7ce2b0200280a1b4e9399826"
+      url: "https://github.com/fmiyahira/frontend-events-time-microapp-ds.git"
+    source: git
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -186,3 +195,4 @@ packages:
     version: "2.1.4"
 sdks:
   dart: ">=3.0.5 <4.0.0"
+  flutter: ">=1.17.0"
