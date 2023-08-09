@@ -1,6 +1,5 @@
-import 'package:events_time_app_client/src/design_system/colors.dart';
 import 'package:events_time_app_client/src/features/auth/utils/strings/auth_strings.dart';
-import 'package:events_time_app_client/src/features/commons/utils/strings/assets_images_strings.dart';
+import 'package:events_time_app_client/src/features/products/presentation/pages/menu_page.dart';
 import 'package:events_time_microapp_ds/events_time_microapp_ds.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
@@ -17,164 +16,135 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController loginController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  bool _passwordVisible = false;
-
-  void _togglePassword() {
-    setState(() {
-      _passwordVisible = !_passwordVisible;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: DSColors.neutral.s100,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset(
-                    AssetsImagesStrings.logo,
-                    height: 300,
-                    width: 300,
-                  ),
-                  const SizedBox(height: 10),
+                  // Image.asset(
+                  //   AssetsImagesStrings.logo,
+                  //   height: 250,
+                  //   width: 250,
+                  // ),
+                  const SizedBox(height: 140),
                   Row(
-                    children: <Widget>[
-                      Text(
+                    children: <DSText>[
+                      DSText(
                         AuthStrings.messageWelcome,
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: AppColors.mainColor,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        color: DSColors.primary.base,
+                        type: DSTextType.HEADING1,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      label: Text(AuthStrings.userField),
-                      suffixIcon: Icon(
-                        Icons.person_pin_rounded,
-                        color: AppColors.mainColor,
-                      ),
+                  const SizedBox(height: 16),
+                  DSTextField(
+                    labelText: AuthStrings.userField,
+                    suffixIcon: Icon(
+                      Icons.person_pin_rounded,
+                      color: DSColors.primary.base,
                     ),
                     controller: loginController,
-                    // enabled: !authController.isLoginProcessing,
                   ),
+                  // enabled: !authController.isLoginProcessing,
                   const SizedBox(height: 20),
-                  TextFormField(
-                    obscureText: !_passwordVisible,
-                    decoration: InputDecoration(
-                      label: Text(AuthStrings.passwordField),
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _passwordVisible
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: AppColors.mainColor,
-                        ),
-                        onPressed: () {
-                          _togglePassword();
-                        },
-                      ),
-                    ),
+                  DSTextField(
+                    labelText: AuthStrings.passwordField,
+                    type: DSTextFieldType.PASSWORD,
                     controller: passwordController,
-                    // enabled: !authController.isLoginProcessing,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
-                      Text(
-                        AuthStrings.forgetPassword,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.mainColor,
+                      Expanded(
+                        child: DSLinkButton(
+                          theme: DSLinkButtonTheme(
+                            linkTextAlignment: AlignmentDirectional.centerEnd,
+                          ),
+                          size: DSLinkButtonSize.SMALL,
+                          text: AuthStrings.forgetPassword,
                         ),
-                      )
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 24),
                   DSButton(
-                    buttonText: AuthStrings.accessLogin,
-                    onPressed: () {},
+                    text: AuthStrings.accessLogin,
+                    size: DSButtonSize.SMALL,
+                    buttonStyle: DSButtonStyle.PRIMARY,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(MenuPage.routeName);
+                    },
                   ),
                   const SizedBox(height: 12),
-                  Text(
+                  DSText(
                     AuthStrings.othersOptionsAccess,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    color: Colors.black54,
+                    type: DSTextType.HEADING4,
                   ),
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Container(
                         decoration: BoxDecoration(
-                            color: AppColors.mainColor,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: IconButton(
-                            icon: const FaIcon(
-                              FontAwesomeIcons.facebookF,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {}),
+                          color: DSColors.primary.base,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: DSIconButton(
+                          icon: FontAwesomeIcons.facebookF,
+                          style: DSIconButtonStyle.MILKED,
+                          theme:
+                              DSIconButtonTheme(buttonSize: 52, iconSize: 24),
+                          onPressed: () {},
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: AppColors.mainColor,
+                            color: DSColors.primary.base,
                             borderRadius: BorderRadius.circular(10)),
-                        child: IconButton(
-                            icon: const FaIcon(
-                              FontAwesomeIcons.twitter,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {}),
+                        child: DSIconButton(
+                          icon: FontAwesomeIcons.twitter,
+                          style: DSIconButtonStyle.MILKED,
+                          theme:
+                              DSIconButtonTheme(buttonSize: 52, iconSize: 24),
+                          onPressed: () {},
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: AppColors.mainColor,
+                            color: DSColors.primary.base,
                             borderRadius: BorderRadius.circular(10)),
-                        child: IconButton(
-                            icon: const FaIcon(
-                              FontAwesomeIcons.instagram,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {}),
+                        child: DSIconButton(
+                          icon: FontAwesomeIcons.instagram,
+                          style: DSIconButtonStyle.MILKED,
+                          theme:
+                              DSIconButtonTheme(buttonSize: 52, iconSize: 24),
+                          onPressed: () {},
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 32),
-                  RichText(
-                    text: TextSpan(
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: AuthStrings.descriptionSignUp,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        TextSpan(
-                          text: AuthStrings.messageSignUp,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.mainColor,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
+                  DSText(
+                    AuthStrings.descriptionSignUp,
+                    type: DSTextType.HEADING4,
+                    color: Colors.black54,
+                    textSpan: <DSTextSpan>[
+                      DSTextSpan(
+                        AuthStrings.messageSignUp,
+                        color: DSColors.primary.dark,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ],
                   ),
                 ],
               ),

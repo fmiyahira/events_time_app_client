@@ -1,6 +1,6 @@
-import 'package:events_time_app_client/src/design_system/colors.dart';
 import 'package:events_time_app_client/src/features/commons/utils/strings/assets_images_strings.dart';
-import 'package:events_time_app_client/src/features/products/presentation/pages/view_product.dart';
+import 'package:events_time_app_client/src/features/products/presentation/pages/view_product_page.dart';
+import 'package:events_time_microapp_ds/events_time_microapp_ds.dart';
 import 'package:flutter/material.dart';
 import 'example_data.dart';
 
@@ -16,7 +16,7 @@ class ExampleCategorySection extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute<dynamic>(
-        builder: (BuildContext context) => const ViewProduct(),
+        builder: (BuildContext context) => const ViewProductPage(),
       ),
     );
   }
@@ -28,10 +28,10 @@ class ExampleCategorySection extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         margin: const EdgeInsets.only(bottom: 16),
-        color: Colors.white,
+        color: DSColors.neutral.s100,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             _buildSectionTileHeader(context),
             _buildFoodTileList(context),
           ],
@@ -63,7 +63,7 @@ class ExampleCategorySection extends StatelessWidget {
       children: <Widget>[
         const SizedBox(height: 16),
         _sectionTitle(context),
-        const SizedBox(height: 8.0),
+        const SizedBox(height: 8),
         if (category.subtitle != null)
           _sectionSubtitle(context)
         else
@@ -77,18 +77,18 @@ class ExampleCategorySection extends StatelessWidget {
     return Row(
       children: <Widget>[
         if (category.isHotSale) _buildSectionHoteSaleIcon(),
-        Text(
+        DSText(
           category.title,
-          style: _textTheme(context).headline6,
+          type: DSTextType.HEADING3,
         )
       ],
     );
   }
 
   Widget _sectionSubtitle(BuildContext context) {
-    return Text(
+    return DSText(
       category.subtitle!,
-      style: _textTheme(context).subtitle2,
+      type: DSTextType.HEADING4,
     );
   }
 
@@ -115,7 +115,7 @@ class ExampleCategorySection extends StatelessWidget {
         if (!isLastIndex)
           Divider(
             height: 16.0,
-            color: Colors.grey[200],
+            color: DSColors.neutral.s88,
           )
         else
           const SizedBox(height: 8.0)
@@ -142,27 +142,20 @@ class ExampleCategorySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(food.name,
-            style: const TextStyle(
-              color: Colors.black54,
-              fontWeight: FontWeight.w800,
-            )),
-        const SizedBox(height: 16),
-        Text(
-          food.price,
-          style: const TextStyle(
-            color: Colors.black54,
-            fontSize: 12,
-          ),
+        DSText(
+          food.name,
+          type: DSTextType.NUMBER,
         ),
         const SizedBox(height: 16),
-        const Text(
+        DSText(
+          food.description,
+          type: DSTextType.BODY_SMALLER,
+          theme: const DSTextTheme(fontSize: 13),
+        ),
+        const SizedBox(height: 16),
+        DSText(
           r'R$200,00',
-          style: TextStyle(
-            color: Colors.black54,
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
+          type: DSTextType.HEADING4,
         ),
       ],
     );
@@ -171,24 +164,11 @@ class ExampleCategorySection extends StatelessWidget {
   Widget _buildSectionHoteSaleIcon() {
     return Container(
       margin: const EdgeInsets.only(right: 4.0),
-      child: const Icon(
-        Icons.whatshot,
-        color: Colors.pink,
-        size: 20.0,
+      child: DSIconButton(
+        icon: Icons.whatshot,
+        style: DSIconButtonStyle.values.first,
+        onPressed: () {},
       ),
     );
   }
-
-  Widget _buildFoodHotSaleIcon() {
-    return Container(
-      padding: const EdgeInsets.all(4.0),
-      decoration: BoxDecoration(
-        color: Colors.pink.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(16.0),
-      ),
-      child: const Icon(Icons.whatshot, color: Colors.pink, size: 16.0),
-    );
-  }
-
-  TextTheme _textTheme(BuildContext context) => Theme.of(context).textTheme;
 }

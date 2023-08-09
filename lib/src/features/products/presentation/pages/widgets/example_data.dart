@@ -32,7 +32,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: r'$ 198,00',
           imageUrl: AssetsImagesStrings.ribs,
@@ -51,7 +51,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: "\$250,00",
           imageUrl: AssetsImagesStrings.ribs,
@@ -70,7 +70,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: "\$250,00",
           imageUrl: AssetsImagesStrings.ribs,
@@ -89,7 +89,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: "\$250,00",
           imageUrl: AssetsImagesStrings.ribs,
@@ -108,7 +108,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: "\$250,00",
           imageUrl: AssetsImagesStrings.ribs,
@@ -127,7 +127,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: "\$250,00",
           imageUrl: AssetsImagesStrings.ribs,
@@ -146,7 +146,7 @@ class ExampleData {
       (int index) {
         return Food(
           name: 'JUNIOR RIBS FOR TWO',
-          price:
+          description:
               'Duas Junior Ribs servidas com dois acompanhamentos, perfeitas para quem está em dupla. Combine com um dos nossos molhos: Barbecue ou Billabong. Acrescente um acompanhamento extra com um preço especial.',
           comparePrice: "\$250,00",
           imageUrl: AssetsImagesStrings.ribs,
@@ -173,14 +173,14 @@ class Category {
 
 class Food {
   String name;
-  String price;
+  String description;
   String comparePrice;
   String imageUrl;
   bool isHotSale;
 
   Food({
     required this.name,
-    required this.price,
+    required this.description,
     required this.comparePrice,
     required this.imageUrl,
     required this.isHotSale,

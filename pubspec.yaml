@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   events_time_microapp_ds:
-    path: "../frontend-events-time-microapp-ds"
+    path: "../events_time_microapp_ds"
     # git:
       # url: https://github.com/fmiyahira/frontend-events-time-microapp-ds.git
   # The following adds the Cupertino Icons font to your application.
@@ -42,6 +42,7 @@ dependencies:
   scroll_to_index: ^3.0.1
   google_nav_bar: ^5.0.6
   line_awesome_flutter: ^2.0.0
+  flutter_credit_card: ^3.0.7
 
 dev_dependencies:
   flutter_test:
