@@ -5,18 +5,46 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "frontend-events-time-app-client",
+            "name": "events-time-client (DEV)",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "dev",
+                "-t",
+                "lib/main_dev.dart",
+            ]
         },
         {
-            "name": "frontend-events-time-app-client (profile mode)",
+            "name": "events-time-client (HOM)",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "hom",
+                "-t",
+                "lib/main_hom.dart",
+            ]
+        },
+        {
+            "name": "events-time-client (PRD)",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "prd",
+                "-t",
+                "lib/main_prd.dart",
+            ]
+        },
+        {
+            "name": "events-time-client (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "frontend-events-time-app-client (release mode)",
+            "name": "events-time-client (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

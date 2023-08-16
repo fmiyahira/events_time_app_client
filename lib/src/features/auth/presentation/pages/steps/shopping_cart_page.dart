@@ -27,80 +27,88 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
       appBar: DSNavBar(
         leading: DSIconButton(
           icon: Icons.arrow_back_ios,
-          onPressed: () {
-            Navigator.of(context).pushNamed(MenuPage.routeName);
-          },
+          onPressed: () {},
           theme: DSIconButtonTheme(iconPadding: 0, buttonSize: 0),
         ),
       ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-              vertical: kLayoutSpacerXS, horizontal: kLayoutSpacerS),
+            vertical: kLayoutSpacerXS,
+            horizontal: kLayoutSpacerS,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      DSText(
-                        'Sacola',
-                        type: DSTextType.NUMBER,
-                      ),
-                      DSText(
-                        'Resumo de valores',
-                        type: DSTextType.NUMBER,
+              DSText(
+                'Resumo de valores',
+                type: DSTextType.HEADING2,
+              ),
+              const SizedBox(height: kLayoutSpacerXS),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: kLayoutSpacerXS, vertical: kLayoutSpacerXS),
+                  decoration: BoxDecoration(
+                    color: DSColors.primary.lighter,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                        color: DSColors.neutral.s72,
+                        blurRadius: 5,
+                        spreadRadius: 1,
+                        offset: const Offset(4, 4),
                       ),
                     ],
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        ListView.separated(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          separatorBuilder: (context, index) {
+                            return const SizedBox(height: kLayoutSpacerXS);
+                          },
+                          itemCount: 8,
+                          itemBuilder: (context, index) {
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                DSText(
+                                  'Barraca do Fulano ${index}',
+                                  type: DSTextType.NUMBER,
+                                ),
+                                DSText(
+                                  r'R$ 200,00',
+                                  type: DSTextType.NUMBER,
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: kLayoutSpacerXS),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  DSText(
+                    'Total',
+                    type: DSTextType.HEADING3,
+                  ),
+                  DSText(
+                    r'R$ 12.000,00',
+                    type: DSTextType.HEADING3,
                   ),
                 ],
               ),
               const SizedBox(height: kLayoutSpacerXS),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ListView.separated(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        separatorBuilder: (context, index) {
-                          return const SizedBox(height: kLayoutSpacerXS);
-                        },
-                        itemCount: 8,
-                        itemBuilder: (context, index) {
-                          return Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              DSText(
-                                'Barraca do Fulano ${index}',
-                                type: DSTextType.NUMBER,
-                              ),
-                              DSText(
-                                r'R$ 200,00',
-                                type: DSTextType.NUMBER,
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                      const SizedBox(height: kLayoutSpacerXS),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          DSText(
-                            'Total',
-                            type: DSTextType.NUMBER,
-                          ),
-                          DSText(
-                            r'R$ 12.000,00',
-                            type: DSTextType.NUMBER,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               Column(
                 children: <Widget>[
                   DSDivider(

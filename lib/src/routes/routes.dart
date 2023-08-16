@@ -4,6 +4,7 @@ import 'package:events_time_app_client/src/features/auth/presentation/pages/logi
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/cash_balance_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/personal_data_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/purchases_history_page.dart';
+import 'package:events_time_app_client/src/features/auth/presentation/pages/splash_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/steps/shopping_cart_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/perfil_page.dart';
 import 'package:events_time_app_client/src/features/products/presentation/pages/menu_page.dart';
@@ -11,7 +12,7 @@ import 'package:events_time_app_client/src/features/products/presentation/pages/
 import 'package:flutter/material.dart';
 
 class AppRoutes {
-  String get initialRoute => ShoppingCartPage.routeName;
+  String get initialRoute => MenuPage.routeName;
 
   Map<String, WidgetBuilder> get routes => <String, WidgetBuilder>{
         LoginPage.routeName: (BuildContext context) => const LoginPage(),
@@ -30,5 +31,6 @@ class AppRoutes {
             const ShoppingCartPage(),
         ListCardsRegister.routeName: (BuildContext context) =>
             const ListCardsRegister(),
+        SplashPage.routeName: (BuildContext context) => const SplashPage()
       };
 }

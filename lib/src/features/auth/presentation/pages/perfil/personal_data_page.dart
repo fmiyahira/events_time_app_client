@@ -16,43 +16,42 @@ class _PersonalDataPageState extends State<PersonalDataPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: DSColors.neutral.s100,
-      appBar: AppBar(
+      appBar: DSNavBar(
         leading: DSIconButton(
-          icon: Icons.arrow_back_ios_new_rounded,
+          icon: Icons.arrow_back_ios,
           onPressed: () {},
-          theme: DSIconButtonTheme(
-            iconColor: DSColors.neutral.s88,
-          ),
+          theme: DSIconButtonTheme(iconPadding: 0, buttonSize: 0),
         ),
-        backgroundColor: DSColors.tertiary.light,
-        title: DSText(
-          'MEUS DADOS',
-          type: DSTextType.BODY_CAPTION,
-          theme: DSTextTheme(
-              fontWeight: FontWeight.w600, textColor: DSColors.neutral.s100),
-        ),
-        centerTitle: true,
       ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            OptionPersonalDataWidget(
-              optionTitle: 'Informações Pessoais',
-              optionSubtitle: 'Nome Completo e CPF',
-              routeName: PersonalDataPage.routeName,
-            ),
-            OptionPersonalDataWidget(
-              optionTitle: 'Dados de Contato',
-              optionSubtitle: 'E-mail e telefone de contato',
-              routeName: PersonalDataPage.routeName,
-            ),
-            OptionPersonalDataWidget(
-              optionTitle: 'Credenciais',
-              optionSubtitle: 'Dados de acesso à minha conta',
-              routeName: PersonalDataPage.routeName,
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: kLayoutSpacerS,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              DSText(
+                'Resumo de valores',
+                type: DSTextType.HEADING2,
+              ),
+              OptionPersonalDataWidget(
+                optionTitle: 'Informações Pessoais',
+                optionSubtitle: 'Nome Completo e CPF',
+                routeName: PersonalDataPage.routeName,
+              ),
+              OptionPersonalDataWidget(
+                optionTitle: 'Dados de Contato',
+                optionSubtitle: 'E-mail e telefone de contato',
+                routeName: PersonalDataPage.routeName,
+              ),
+              OptionPersonalDataWidget(
+                optionTitle: 'Credenciais',
+                optionSubtitle: 'Dados de acesso à minha conta',
+                routeName: PersonalDataPage.routeName,
+              ),
+            ],
+          ),
         ),
       ),
     );

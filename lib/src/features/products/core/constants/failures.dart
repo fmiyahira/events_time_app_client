@@ -1,1 +1,0 @@
-class LoginUserInactiveFailure implements Exception {}

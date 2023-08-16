@@ -18,7 +18,7 @@ class OptionPersonalDataWidget extends StatelessWidget {
         Navigator.of(context).pushNamed(routeName);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: kLayoutSpacerXXS),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

@@ -62,28 +62,18 @@ class _MenuPageState extends State<MenuPage>
             ExampleCategorySection(category: object as Category),
         slivers: <SliverAppBar>[
           SliverAppBar(
+            leadingWidth: kLayoutSpacerS,
+            titleSpacing: kLayoutSpacerS,
+            backgroundColor: DSColors.neutral.s100,
             pinned: true,
-            stretch: true,
-            expandedHeight: 190.0,
-            backgroundColor: DSColors.chart02.base,
-            flexibleSpace: FlexibleSpaceBar(
-              titlePadding: const EdgeInsets.only(bottom: 100),
-              background: Image.asset(
-                AssetsImagesStrings.outback,
-                fit: BoxFit.cover,
-              ),
-              stretchModes: const <StretchMode>[
-                StretchMode.blurBackground,
-                StretchMode.fadeTitle
-              ],
-            ),
+            title: DSText('Cardápio', type: DSTextType.HEADING2),
             bottom: TabBar(
+              padding: const EdgeInsets.symmetric(horizontal: kLayoutSpacerXS),
               isScrollable: true,
               controller: tabController,
-              indicatorPadding: const EdgeInsets.symmetric(horizontal: 16.0),
               indicatorColor: DSColors.primary.base,
               labelColor: DSColors.primary.base,
-              unselectedLabelColor: Colors.white,
+              unselectedLabelColor: DSColors.neutral.s46,
               indicatorWeight: 3.0,
               tabs: data.map((Category e) {
                 return Tab(text: e.title);
@@ -99,10 +89,7 @@ class _MenuPageState extends State<MenuPage>
         decoration: BoxDecoration(
           color: DSColors.neutral.s100,
           boxShadow: <BoxShadow>[
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
-            )
+            BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
           ],
         ),
         child: SafeArea(
@@ -110,7 +97,7 @@ class _MenuPageState extends State<MenuPage>
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               DSButtonBar.withText(
-                value: r'R$ 16.000,00',
+                value: r'R$ 0,00',
                 caption: 'Valor da compra',
                 primaryButtonText: 'Ver Sacola',
                 primaryOnPressed: () {
@@ -128,16 +115,12 @@ class _MenuPageState extends State<MenuPage>
                                 separatorBuilder: (context, index) {
                                   return Column(
                                     children: [
-                                      SizedBox(
-                                        height: kLayoutSpacerXS,
-                                      ),
+                                      const SizedBox(height: kLayoutSpacerXS),
                                       DSDivider(
                                         theme: DSDividerTheme(
                                             color: DSColors.neutral.s72),
                                       ),
-                                      SizedBox(
-                                        height: kLayoutSpacerXS,
-                                      ),
+                                      const SizedBox(height: kLayoutSpacerXS),
                                     ],
                                   );
                                 },
@@ -145,16 +128,17 @@ class _MenuPageState extends State<MenuPage>
                                 itemCount: 12,
                                 itemBuilder: (context, i) {
                                   return Column(
-                                    children: [
+                                    children: <Widget>[
                                       Row(
                                         children: [
                                           Image.asset(
                                             AssetsImagesStrings.outback,
                                             fit: BoxFit.cover,
-                                            height: 90,
-                                            width: 120,
+                                            height: 100,
+                                            width: 130,
                                           ),
-                                          const SizedBox(width: 16),
+                                          const SizedBox(
+                                              width: kLayoutSpacerXS),
                                           Expanded(
                                             child: Column(
                                               crossAxisAlignment:
@@ -164,18 +148,27 @@ class _MenuPageState extends State<MenuPage>
                                                   'Título do Outback',
                                                   type: DSTextType.NUMBER,
                                                 ),
-                                                const SizedBox(height: 8),
+                                                const SizedBox(
+                                                    height: kLayoutSpacerXXXS),
+                                                DSText(
+                                                  'Barraca 1',
+                                                  type: DSTextType.NUMBER_SMALL,
+                                                  color: DSColors.primary.base,
+                                                ),
+                                                const SizedBox(
+                                                    height: kLayoutSpacerXXXS),
                                                 DSText(
                                                   'Subtítulo do Outback asas as as as as as s aaaaaaaaaaaa as as as as a saassas as ',
                                                   type: DSTextType.LABEL_SMALL,
                                                 ),
-                                                const SizedBox(height: 10),
+                                                const SizedBox(
+                                                    height: kLayoutSpacerXXXS),
                                               ],
                                             ),
                                           ),
                                         ],
                                       ),
-                                      const SizedBox(height: 10),
+                                      const SizedBox(height: kLayoutSpacerXXS),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,

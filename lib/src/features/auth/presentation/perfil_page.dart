@@ -1,4 +1,3 @@
-import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/cards_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/cash_balance_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/personal_data_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/purchases_history_page.dart';

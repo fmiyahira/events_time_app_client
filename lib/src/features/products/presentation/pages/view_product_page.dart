@@ -48,7 +48,8 @@ class _ViewProductPageState extends State<ViewProductPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 20),
+                        horizontal: kLayoutSpacerS,
+                        vertical: kComponentSpacerXL),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -83,7 +84,8 @@ class _ViewProductPageState extends State<ViewProductPage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            padding: const EdgeInsets.symmetric(
+                horizontal: 20, vertical: kLayoutSpacerXS),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(5),
@@ -120,12 +122,9 @@ class _ViewProductPageState extends State<ViewProductPage> {
                           calculate = count * priceProduct;
                         }),
                       ),
-                      const SizedBox(width: 10),
-                      DSText(
-                        '${count}',
-                        type: DSTextType.LABEL,
-                      ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: kLayoutSpacerXXS),
+                      DSText('${count}', type: DSTextType.LABEL),
+                      const SizedBox(width: kLayoutSpacerXXS),
                       InkWell(
                         child: DSIconButton(
                           icon: Icons.add,

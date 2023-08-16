@@ -32,6 +32,10 @@ dependencies:
     sdk: flutter
   events_time_microapp_ds:
     path: "../events_time_microapp_ds"
+  events_time_microapp_dependencies:
+    path: "../events_time_microapp_dependencies"
+  events_time_microapp_auth:
+    path: "../events_time_microapp_auth"
     # git:
       # url: https://github.com/fmiyahira/frontend-events-time-microapp-ds.git
   # The following adds the Cupertino Icons font to your application.
@@ -43,6 +47,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   line_awesome_flutter: ^2.0.0
   flutter_credit_card: ^3.0.7
+  flutter_flavorizr: ^2.1.5
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +60,30 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
+flavorizr:
+  flavors:
+    dev:
+      app:
+        name: "EventsTimeClient (DEV)"
+      android:
+        applicationId: "com.dev.client.events.time"
+      ios:
+        bundleId: "com.dev.client.events.time"
+    hom:
+      app:
+        name: "EventsTimeClient (HOM)"
+      android:
+        applicationId: "com.hom.client.events.time"
+      ios:
+        bundleId: "com.hom.client.events.time"
+    prd:
+      app:
+        name: "EventsTimeClient"
+      android:
+        applicationId: "com.prd.client.events.time"
+      ios:
+        bundleId: "com.prd.client.events.time"
+        
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
