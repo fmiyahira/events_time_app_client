@@ -36,6 +36,8 @@ dependencies:
     path: "../events_time_microapp_dependencies"
   events_time_microapp_auth:
     path: "../events_time_microapp_auth"
+  events_time_microapp_hub:
+    path: "../events_time_microapp_hub"
     # git:
       # url: https://github.com/fmiyahira/frontend-events-time-microapp-ds.git
   # The following adds the Cupertino Icons font to your application.

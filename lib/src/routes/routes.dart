@@ -1,6 +1,6 @@
 import 'package:events_time_app_client/src/features/auth/presentation/pages/cards/list_cards_register.dart';
-import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/cards_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/login_page.dart';
+import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/cards_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/cash_balance_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/personal_data_page.dart';
 import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/purchases_history_page.dart';
@@ -12,7 +12,7 @@ import 'package:events_time_app_client/src/features/products/presentation/pages/
 import 'package:flutter/material.dart';
 
 class AppRoutes {
-  String get initialRoute => MenuPage.routeName;
+  String get initialRoute => 'auth';
 
   Map<String, WidgetBuilder> get routes => <String, WidgetBuilder>{
         LoginPage.routeName: (BuildContext context) => const LoginPage(),
