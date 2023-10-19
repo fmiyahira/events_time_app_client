@@ -1,4 +1,4 @@
-import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/enums/history_status_enum_string.dart';
+import 'package:events_time_app_client/src/features/auth/presentation/pages/utils/enums/history_status_enum_string.dart';
 import 'package:flutter/material.dart';
 
 enum HistoryStatusEnum {

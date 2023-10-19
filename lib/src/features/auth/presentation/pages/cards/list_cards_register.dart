@@ -12,8 +12,8 @@ class ListCardsRegister extends StatelessWidget {
       backgroundColor: DSColors.neutral.s100,
       appBar: DSNavBar(
         leading: DSIconButton(
-          icon: Icons.arrow_back_ios,
-          onPressed: () {},
+          icon: Icons.arrow_back_ios_new_rounded,
+          onPressed: () => Navigator.of(context).pop(),
           theme: DSIconButtonTheme(iconPadding: 0, buttonSize: 0),
         ),
       ),
@@ -22,7 +22,7 @@ class ListCardsRegister extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               DSText(
                 'Pagamentos',
                 type: DSTextType.HEADING2,
@@ -32,10 +32,11 @@ class ListCardsRegister extends StatelessWidget {
                 child: ListView.builder(
                   physics: const AlwaysScrollableScrollPhysics(),
                   itemCount: 6,
-                  itemBuilder: (context, i) {
+                  itemBuilder: (BuildContext context, int i) {
                     return InkWell(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: kLayoutSpacerXXS),
                         child: Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
@@ -46,7 +47,7 @@ class ListCardsRegister extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Row(
-                                children: [
+                                children: <Widget>[
                                   Container(
                                     decoration: BoxDecoration(
                                       color: DSColors.neutral.s88,
@@ -55,7 +56,7 @@ class ListCardsRegister extends StatelessWidget {
                                     child: Padding(
                                       padding: const EdgeInsets.all(8),
                                       child: SizedBox.fromSize(
-                                        size: Size.fromRadius(12), //
+                                        size: const Size.fromRadius(12), //
                                         child: Image.asset(
                                           'assets/images/mastercard2.jpeg',
                                           height: 8,
@@ -68,7 +69,7 @@ class ListCardsRegister extends StatelessWidget {
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: [
+                                    children: <Widget>[
                                       DSText(
                                         'Crédito',
                                         type: DSTextType.NUMBER_SMALL,

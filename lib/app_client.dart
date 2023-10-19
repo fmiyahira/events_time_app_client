@@ -1,9 +1,10 @@
 import 'package:events_time_app_client/flavors.dart';
-import 'package:events_time_app_client/src/features/products/presentation/pages/menu_page.dart';
 import 'package:events_time_app_client/src/routes/routes.dart';
 import 'package:events_time_microapp_auth/events_time_microapp_auth.dart';
 import 'package:events_time_microapp_dependencies/events_time_microapp_dependencies.dart';
+import 'package:events_time_microapp_hub/domain/models/menu/shopping_cart_model_hub.dart';
 import 'package:events_time_microapp_hub/events_time_microapp_hub.dart';
+import 'package:events_time_microapp_menu/events_time_microapp_menu.dart';
 import 'package:flutter/material.dart';
 
 class AppClient {
@@ -26,8 +27,14 @@ class AppClient {
     MicroappAuth(
       microappAuthConfig: MicroappAuthConfig(
         authGoalEnum: AuthGoalEnum.client,
-        destinationAfterLogin: MenuPage.routeName,
-        destinationHome: MenuPage.routeName,
+        destinationAfterLogin: 'menu',
+        destinationHome: 'menu',
+      ),
+    ),
+    MicroappMenu(
+      microappMenuConfig: MicroappMenuConfig(
+        destinationAfterConfirm: '/shopping-cart-page',
+        menuGoalEnum: MenuGoalEnum.client,
       ),
     ),
   ];
@@ -40,6 +47,8 @@ class AppClient {
 
   UserModel? userLogged;
   LoggedEventModel? loggedEvent;
+  ShoppingCartModelHub shoppingCart =
+      ShoppingCartModelHub(items: <ItemCartModelHub>[]);
 
   Future<void> initialize() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -60,15 +69,17 @@ class AppClient {
     localStorage = LocalStorageSembastImpl(
       await SembastImpl().openDatabase(),
     );
-    requesting = Requesting(
-      baseUrl: F.baseUrl,
-      localStorage: localStorage,
-    );
+
     hub = MicroappHub();
 
     messengers = <String, ValueNotifier<dynamic>>{
       'hub': hub,
     };
+
+    requesting = Requesting(
+      baseUrl: F.baseUrl,
+      messengers: messengers,
+    );
   }
 
   Future<void> initializeSubApps() async {
@@ -113,6 +124,12 @@ class AppClient {
       if (hub.value is ResponseEventSelectedHubState) {
         loggedEvent = (hub.value as ResponseEventSelectedHubState).payload
             as LoggedEventModel?;
+        return;
+      }
+
+      if (hub.value is ShareShoppingCartHubState) {
+        shoppingCart = (hub.value as ShareShoppingCartHubState).payload
+            as ShoppingCartModelHub;
         return;
       }
     });

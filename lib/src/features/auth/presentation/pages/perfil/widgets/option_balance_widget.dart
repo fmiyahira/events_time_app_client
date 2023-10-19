@@ -19,7 +19,7 @@ class OptionBalanceWidget extends StatelessWidget {
           InkWell(
             child: Container(
               decoration: BoxDecoration(
-                color: DSColors.tertiary.light,
+                color: DSColors.primary.light,
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),

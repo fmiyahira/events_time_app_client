@@ -23,11 +23,11 @@ class F {
   static String get baseUrl {
     switch (appFlavor ?? Flavor.dev) {
       case Flavor.dev:
-        return 'http://192.168.224.1:5000';
+        return 'http://192.168.15.44:5000';
       case Flavor.hom:
         return 'http://192.168.100.82:5000';
       case Flavor.prd:
-        return 'http://192.168.224.1:5000';
+        return 'http://192.168.15.44:5000';
     }
   }
 }

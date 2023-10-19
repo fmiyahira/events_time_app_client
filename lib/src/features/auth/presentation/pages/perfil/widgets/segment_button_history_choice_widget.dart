@@ -1,4 +1,4 @@
-import 'package:events_time_app_client/src/features/auth/presentation/pages/perfil/enums/list_histories_filters_enum.dart';
+import 'package:events_time_app_client/src/features/auth/presentation/pages/utils/enums/list_histories_filters_enum.dart';
 import 'package:events_time_microapp_ds/events_time_microapp_ds.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class SegmentedButtonChoiceWidget extends StatelessWidget {
         backgroundColor: MaterialStateProperty.resolveWith<Color>(
           (Set<MaterialState> states) {
             if (states.contains(MaterialState.selected)) {
-              return DSColors.tertiary.base;
+              return DSColors.primary.base;
             }
             return DSColors.neutral.s100;
           },
@@ -28,7 +28,7 @@ class SegmentedButtonChoiceWidget extends StatelessWidget {
             if (states.contains(MaterialState.selected)) {
               return BorderSide(color: DSColors.neutral.s100);
             }
-            return BorderSide(color: DSColors.tertiary.base);
+            return BorderSide(color: DSColors.primary.base);
           },
         ),
         iconColor: MaterialStateProperty.resolveWith<Color>(
@@ -36,7 +36,7 @@ class SegmentedButtonChoiceWidget extends StatelessWidget {
             if (states.contains(MaterialState.selected)) {
               return DSColors.neutral.s100;
             }
-            return DSColors.tertiary.base;
+            return DSColors.primary.base;
           },
         ),
       ),

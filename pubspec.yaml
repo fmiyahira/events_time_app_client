@@ -2,7 +2,7 @@ name: events_time_app_client
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,8 +38,10 @@ dependencies:
     path: "../events_time_microapp_auth"
   events_time_microapp_hub:
     path: "../events_time_microapp_hub"
+  events_time_microapp_menu:
+    path: "../events_time_microapp_menu"
     # git:
-      # url: https://github.com/fmiyahira/frontend-events-time-microapp-ds.git
+    # url: https://github.com/fmiyahira/frontend-events-time-microapp-ds.git
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -50,6 +52,9 @@ dependencies:
   line_awesome_flutter: ^2.0.0
   flutter_credit_card: ^3.0.7
   flutter_flavorizr: ^2.1.5
+  intl: ^0.18.0
+  loading_animation_widget: ^1.2.0+4
+  linear_progress_bar: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -85,13 +90,12 @@ flavorizr:
         applicationId: "com.prd.client.events.time"
       ios:
         bundleId: "com.prd.client.events.time"
-        
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

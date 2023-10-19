@@ -7,16 +7,10 @@ class PurchaseWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: kLayoutSpacerXXS),
       child: Container(
         decoration: BoxDecoration(
           color: DSColors.neutral.s100,
-          border: Border(
-            bottom: BorderSide(width: 0, color: DSColors.success.base),
-            left: BorderSide(width: 8, color: DSColors.success.base),
-            top: BorderSide(width: 0, color: DSColors.success.base),
-            right: BorderSide(width: 0, color: DSColors.success.base),
-          ),
           borderRadius: const BorderRadius.all(
             Radius.circular(10),
           ),
@@ -30,32 +24,29 @@ class PurchaseWidget extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Row(
+          padding: const EdgeInsets.symmetric(
+              horizontal: kLayoutSpacerXS, vertical: kLayoutSpacerXS),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
                 children: <Widget>[
                   DSText(
-                    'Sobá Médio',
-                    type: DSTextType.NUMBER,
-                  ),
-                  DSText(
-                    'Associação Okinawa de Campo Grande',
-                    type: DSTextType.BODY_SMALLER,
+                    '#10',
+                    type: DSTextType.NUMBER_SMALL,
+                    color: DSColors.primary.base,
                   ),
                 ],
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   DSText(
-                    r'R$ 25,00',
+                    r'R$ 105,00',
                     type: DSTextType.NUMBER_SMALL,
                   ),
                   DSText(
-                    '20/04/2023',
+                    'Compra realizada às 22:47',
                     type: DSTextType.BODY_SMALLER,
                   ),
                 ],

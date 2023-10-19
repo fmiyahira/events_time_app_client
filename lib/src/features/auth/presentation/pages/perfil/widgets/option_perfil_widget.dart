@@ -1,6 +1,5 @@
 import 'package:events_time_microapp_ds/events_time_microapp_ds.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class OptionPageWidget extends StatelessWidget {
   final String optionTitle;
@@ -19,15 +18,15 @@ class OptionPageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(routeName);
+        Navigator.of(context).pushReplacementNamed(routeName);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
+        padding: const EdgeInsets.symmetric(
+            vertical: kLayoutSpacerXXS, horizontal: kComponentSpacerXL),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Expanded(
-              flex: 1,
               child: DSIconButton(icon: icon, onPressed: () {}),
             ),
             const SizedBox(width: 10),
@@ -35,7 +34,7 @@ class OptionPageWidget extends StatelessWidget {
               flex: 7,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <DSText>[
                   DSText(
                     optionTitle,
                     type: DSTextType.BODY,
@@ -48,7 +47,6 @@ class OptionPageWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
               child: DSIconButton(
                 icon: Icons.arrow_forward_ios_rounded,
                 theme: DSIconButtonTheme(

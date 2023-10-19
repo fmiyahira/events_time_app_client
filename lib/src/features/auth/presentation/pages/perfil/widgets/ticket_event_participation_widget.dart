@@ -7,10 +7,10 @@ class TicketEventParticipationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: <Widget>[
         Container(
           decoration: BoxDecoration(
-            color: DSColors.tertiary.light,
+            color: DSColors.primary.light,
             borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
@@ -46,10 +46,10 @@ class TicketEventParticipationWidget extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(0, 24, 0, 0),
           child: Stack(
             alignment: Alignment.center,
-            children: [
+            children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                  color: DSColors.tertiary.light,
+                  color: DSColors.primary.light,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(10),
                   ),
@@ -72,7 +72,7 @@ class TicketEventParticipationWidget extends StatelessWidget {
                     children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: <Widget>[
                           Expanded(
                             child: DSText(
                               'Associação Nipo Brasileira',
@@ -83,7 +83,7 @@ class TicketEventParticipationWidget extends StatelessWidget {
                             ),
                           ),
                           Row(
-                            children: [
+                            children: <Widget>[
                               DSIconButton(
                                 icon: Icons.calendar_month_rounded,
                                 onPressed: () {},

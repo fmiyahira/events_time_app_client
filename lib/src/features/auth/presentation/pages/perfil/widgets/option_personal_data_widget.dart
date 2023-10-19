@@ -5,20 +5,22 @@ class OptionPersonalDataWidget extends StatelessWidget {
   final String optionTitle;
   final String optionSubtitle;
   final String routeName;
-  const OptionPersonalDataWidget(
-      {super.key,
-      required this.optionSubtitle,
-      required this.optionTitle,
-      required this.routeName});
+  const OptionPersonalDataWidget({
+    super.key,
+    required this.optionSubtitle,
+    required this.optionTitle,
+    required this.routeName,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(routeName);
+        Navigator.of(context).pushReplacementNamed(routeName);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: kLayoutSpacerXXS),
+        padding: const EdgeInsets.symmetric(
+            vertical: kLayoutSpacerXXS, horizontal: kLayoutSpacerS),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
