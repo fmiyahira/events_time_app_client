@@ -83,7 +83,7 @@ class _ShoppingCartCheckoutState extends State<ShoppingCartCheckout> {
                                         MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       DSText(
-                                        '3x Bundinha do Koji',
+                                        'Exemplo 1',
                                         type: DSTextType.BODY_SMALL,
                                       ),
                                       DSText(
@@ -97,7 +97,7 @@ class _ShoppingCartCheckoutState extends State<ShoppingCartCheckout> {
                                         MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       DSText(
-                                        '1x Xingada no Koji',
+                                        'Exemplo 2',
                                         type: DSTextType.BODY_SMALL,
                                       ),
                                       DSText(
@@ -111,7 +111,7 @@ class _ShoppingCartCheckoutState extends State<ShoppingCartCheckout> {
                                         MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       DSText(
-                                        '4x Pimbada no Koji',
+                                        'Exemplo 3',
                                         type: DSTextType.BODY_SMALL,
                                       ),
                                       DSText(
